@@ -1,0 +1,39 @@
+{% load bootstrap5 %}
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    {% if title%}
+    <title> Kiliga_photography | {{title}}</title>
+
+    {% else %}
+    <title> Kiliga_photography | {{title}}</title>
+    {% endif %}
+
+    {% block styles %}
+        {% bootstrap_css %}
+
+
+</head>
+<body>
+
+    {% include "navbar.html" %}
+    {% block content %}
+
+    {%endblock%}
+
+    {% block scripts %}
+    <script>
+      function myFunction() {
+        var copyText = document.getElementById("link");
+        copyText.select();
+        document.execCommand("Copy");
+        
+      }
+    </script>
+    
+</body>
+</html>
