@@ -3,4 +3,4 @@ from django.http  import HttpResponse
 
 # Create your views here.
 def welcome(request):
-    return HttpResponse('WElcome to the kiliga photography')
+    return HttpResponse('Welcome to the kiliga photography')
