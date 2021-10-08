@@ -3,3 +3,21 @@
 {% block content %}
 
 {{block.super}}
+
+<!-- home page -->
+
+<div class="banner">
+    <div class="top-cover">
+        <div class="container">
+            <h2 id="categories">Photography is an austere and blazing poetry of the real</h2>
+            <form class="form" role= "search" action="{path 'search_image' %}">
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="&#xf3ee; Search by category" name="image_category">
+                </div>
+            </form>
+            <p>Taking pictures is savoring life intensely, every hundredth of a second.</p>
+            <a href="#picha"> Explore Gallery</a>
+        </div>
+    </div>
+</div>
