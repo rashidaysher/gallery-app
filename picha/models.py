@@ -28,5 +28,8 @@ class Category(models.Model):
 
 
     # location class
+
+class Location(models.Model):
+    
               
 
