@@ -10,6 +10,7 @@ cloudinary = "*"
 django-bootstrap-v5 = "*"
 psycopg2-binary = "*"
 pyuploadcare = "*"
+pillow = "*"
 
 [dev-packages]
 

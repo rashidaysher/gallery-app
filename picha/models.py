@@ -62,8 +62,8 @@ class Image(models.Model):
     picha = models.ImageField(upload_to = 'uploads/')
     pic = ImageField(blank = True, manual_crop= '1950x2000')
     description = models.TextField()
-    image_location = models.ForeignKey('Location')
-    image_category = models.ForeignKey('Category')
+    image_location = models.ForeignKey('Location',on_delete=models.CASCADE,)
+    image_category = models.ForeignKey('Category',on_delete=models.CASCADE,)
 
     def save_image(self):
         self.save()
