@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'picha',
-    'bootstrap5',
+    'bootstrap4',
     'pyuploadcare.dj',
     'django.contrib.admin',
     'django.contrib.auth',
