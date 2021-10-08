@@ -12,6 +12,7 @@ psycopg2-binary = "*"
 pyuploadcare = "*"
 pillow = "*"
 bootstrap4 = "*"
+django-bootstrap4 = "*"
 
 [dev-packages]
 
