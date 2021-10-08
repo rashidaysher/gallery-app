@@ -73,5 +73,31 @@ class Image(models.Model):
 
     @classmethod
     def update_image(cls, id, name, description, image_location, image_category):
-        update = cls.objects.filter(id = id).update(name= name, description = description, image_location = image_location, image= image_category)        
+        update = cls.objects.filter(id = id).update(name= name, description = description, image_location = image_location, image= image_category)  
+
+    @classmethod
+    def get_all_images(cls):
+        images = cls.objects.all()
+        return images
+
+    @classmethod
+    def get_image_by_id(cls,id):
+        image = cls.objects.filter(id= id).all()
+        return image
+
+    @classmethod
+    def search_by_category(cls,image_category):
+        images = Image.objects.filter(image_category__name__icontains=image_category)
+        return images
+
+    @classmethod
+    def filter_by_location(cls, image_location):
+        images_location = cls.objects.filter(image_location__id=image_location)
+        return images_location
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']          
     
