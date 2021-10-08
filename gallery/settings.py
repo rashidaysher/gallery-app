@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'picha',
+    'bootstrap5',
     'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
