@@ -10,7 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,8 +38,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'picha',
-    'bootstrap4',
-    'pyuploadcare.dj',
+    'bootstrap5',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,13 +129,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-UPLOADCARE = {
-'pub_key': 'bf923ab684e869aabdb4',
-'secret': '2fb27aabe046d31401c6',
-}
+cloudinary.config( 
+  cloud_name = "dksvzn4d9", 
+  api_key = "956545548131743", 
+  api_secret = "4ar2Prqvzy0XyOvJ7izVcfje-Y8" 
+)
