@@ -17,14 +17,21 @@
   <!-- Jumbotron -->
   <div class="card card-image" style="background-position:center;">
   </div>
-  <div class="text-white text-center rgba-stylish-strong py-2 px-2">
+  <div class="text-white text-center rgba-stylish-strong" id="color">
     <div class="py-5">
 
       <!-- Content -->
 
-      <h2 class="card-title h2 my-4 py-2">Welcome To The Gallery App</h2>
-      <p class="mb-4 pb-2 px-md-5 mx-md-5">When words become unclear, I shall focus with photographs. <br>
-        When images become inadequate, I shall be content with silence.</p>
+      <h2 class="card-title h2 my-4 py-2">If you can't make it good, at least make it look good.</h2><div class="col-md-5 col-sm-6 col-lg-6"><br><br>
+        <form role="search" action="{% url 'searchPage' %}">
+          <div class="md-form my-0">
+            <input class="form-control" name="category" type="text" placeholder="Search By Category">
+            <button type="submit" class="btn btn-sm btn-info">Search</button>
+          </div>
+        </form>
+      </div>
+       <br><br><br><br>
+      <p class="mb-4 pb-2 px-md-5 mx-md-5" id="txt">It is my intention to present – through the medium of photography – intuitive observations of the natural world which may have meaning to the spectators.</p>
 
     </div>
   </div>
@@ -36,18 +43,9 @@
 <div class="container">
 
   <div class="row">
+    
     <div class="col-md-5 col-sm-6 col-lg-6">
-      <form role="search" action="{% url 'searchPage' %}">
-        <div class="md-form my-0">
-          <input class="form-control" name="category" type="text" placeholder="Search By Category">
-          <button type="submit" class="btn btn-sm btn-info">Search</button>
-        </div>
-      </form>
-    </div>
-    <div class="col-md-5 col-sm-6 col-lg-6">
-      <!-- Basic dropdown -->
-      <!-- <a class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">View Images By Location</a> -->
+     
 
       <div class="dropdown-menu dropdown-primary">
         {% for items in location %}
@@ -68,22 +66,16 @@
 
     <div id="images" class="col-xs-6 col-sm-3 col-md-4 col-lg-4">
       <img style="margin-top: 10px;margin-bottom:10px;" class="img-fluid z-depth-1 img-thumbnail"
-        src="{{ items.image.url }}" alt="{{ items.image_name }}" data-toggle="modal" data-target="#modal{{items.id}}">
+        src="{{ items.picture.url }}" alt="{{ items.pic_name }}" data-toggle="modal" data-target="#modal{{items.id}}">
     </div>
     {% endfor %}
   </div>
 
 
   {% for items in images %}
-
-  <!-- Grid column -->
-
-  <!--Modal: Name-->
   <div class="modal fade" id="modal{{items.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-
-      <!--Content-->
       <div class="modal-content">
 
         <!--Body-->
@@ -92,7 +84,7 @@
                 z-depth-1-half">
 
 
-            <img class="embed-responsive-item" src="{{ items.image.url }}" alt="{{ items.image_name }}" allowfullscreen>
+            <img class="embed-responsive-item" src="{{ items.picture.url }}" alt="{{ items.pic_name }}" allowfullscreen>
 
           </div>
         </div>
@@ -112,22 +104,22 @@
             <button type="button" class="btn btn-outline-info btn-rounded btn-md ml-4"
               onclick="myFunction('{{items.id}}.url')">Copy Link</button>
             <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
-              data-dismiss="modal">Close</button>
+              data-dismiss="modal">Exit</button>
           </div>
 
           <div>
-            <input class="form-control input-lg" type="text" value="{{items.image.url}}" id="{{items.id}}.url">
+            <input class="form-control input-lg" type="text" value="{{items.picture.url}}" id="{{items.id}}.url">
           </div>
 
 
         </div>
 
       </div>
-      <!--/.Content-->
+     
 
     </div>
   </div>
-  <!--Modal: Name-->
+ 
 
   {% endfor %}
 </div>

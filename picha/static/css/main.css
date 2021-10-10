@@ -1,4 +1,13 @@
 body{
-    background-image: url(../images/landing.jpg);
+    background-image: url(../images/landing2.jpg)
 
+}
+
+#color{
+    background-image: url(../images/landing.jpg);
+    margin-top: 0;
+}
+
+#txt{
+      padding-top: 30px;
 }

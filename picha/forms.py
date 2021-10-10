@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import *
+from .models import Category,Image, Location
 
 class ImageForm(forms.ModelForm):
     class Meta:
@@ -18,7 +18,7 @@ CATEGORIES =(
 
 class ImagesForm(forms.Form):
     image = forms.ImageField(required=True) 
-    imagename = forms.CharField(required=True)
+    pic_name = forms.CharField(required=True)
     description = forms.CharField(required=True)
-    locaton = forms.CharField(required=True)
-    category = forms.ChoiceField(choices=CATEGORIES, required=True)
+    location = forms.CharField(required=True)
+    pic_category = forms.ChoiceField(choices=CATEGORIES, required=True)

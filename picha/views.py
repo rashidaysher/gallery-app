@@ -9,11 +9,11 @@ from django.core.exceptions import ObjectDoesNotExist
 def main(request):
     try:
         images = Image.objects.all()
-        category = Category.objects.all()
+        pic_category = Category.objects.all()
         location = Location.objects.all()
     except ObjectDoesNotExist:
         raise Http404()
-    return render(request, 'index.html', {'images': images, 'category': category, 'location': location})
+    return render(request, 'index.html', {'images': images, 'pic_category': pic_category, 'location': location})
 
 
 def search_images(request):
@@ -26,7 +26,7 @@ def search_images(request):
         return render(request, 'search.html', {"message": message, "image": searched_category})
 
     else:
-        message = "You haven't searched for any term"
+        message = "Kindly search for any term"
         return render(request, 'search.html', {'message': message})
 
 
