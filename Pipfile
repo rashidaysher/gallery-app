@@ -12,6 +12,8 @@ psycopg2-binary = "*"
 pillow = "*"
 bootstrap4 = "*"
 django-bootstrap4 = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 
